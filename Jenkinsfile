@@ -5,13 +5,18 @@ pipeline {
     }
 
     stages {
+         stage('Clean wrokspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Pull') {
             steps {
                 git branch: 'main', url: 'https://github.com/rodeaayush/demo_repo.git'
                 echo 'pull successfull'
             }
         }
-                stage('Build') {
+        stage('Build') {
             steps {
                 sh 'mvn clean package'
                 echo 'Here we are deploying the code'
