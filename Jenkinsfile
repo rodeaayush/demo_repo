@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                git credentialsId: 'admin', url: 'https://github.com/rodeaayush/demo_repo.git'
+                git branch: 'main', url: 'https://github.com/rodeaayush/demo_repo.git'
                 echo 'pull successfull'
             }
         }
